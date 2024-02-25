@@ -13,9 +13,15 @@ body {
 .main {
     .form {
         @include flex;
-        gap: 1em;
         padding: 1em;
         
+        .color-picker {
+            padding: .2em;
+            height: 42px;
+            border-radius: 0;
+            border: none;
+        }
+
         .custom-select::after, .select {
             grid-area: select;
         }
@@ -53,9 +59,10 @@ body {
                 appearance: none;
                 border: none;
                 outline: none;
-                padding: 0 1em 0 0;
+                padding: .4em 0;
                 font-family: inherit;
-                font-size: inherit;
+                font-size: 1rem;
+                font-weight: 200;
                 cursor: inherit;
                 line-height: inherit;
 
@@ -69,6 +76,33 @@ body {
             @include font;
             background: $light-color;
             color: $text-color;
+            padding: .7em;
+            border: none;
+            border-radius: 4px;
         }
     }
+
+}
+.colors {
+    @include flex;
+    height: 87.8vh;
+    width: 100%;
+    
+
+    .color {
+        clear: both;
+        background-color: blue;
+        height: 100%;
+        width: 25%;
+        color: transparent;
+    }
+}
+
+.footer {
+    @include flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4em;
+    background: $bg-color;
 }

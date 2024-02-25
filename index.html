@@ -12,35 +12,26 @@
 </head>
 <body>
     <main class="main">
-        <form class="form">
+        <form class="form" id="form">
             <input type="color" id="color-picker" class="color-picker">
             <div class="custom-select">
-                <select class="select">
-                    <option value="0">Monochrome</option>
-                    <option value="1">Monochrome-dark</option>
-                    <option value="2">Monochrome-light</option>
-                    <option value="3">Analogic</option>
-                    <option value="4">Complement</option>
-                    <option value="5">Analogic-complement</option>
-                    <option value="6">Triad</option>
+                <select class="select" id="select">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
                 </select>
             </div>
             <button class="btn" type="submit">Get color scheme</button>
         </form>
         <section class="colors">
-            <div class="color">1</div>
-            <div class="color">1</div>
-            <div class="color">1</div>
-            <div class="color">1</div>
-            <div class="color">1</div>
+
         </section>
     </main>
     <footer class="footer">
-        <p class="hex-value">#F55A5A</p>
-        <p class="hex-value">#F55A5A</p>
-        <p class="hex-value">#F55A5A</p>
-        <p class="hex-value">#F55A5A</p>
-        <p class="hex-value">#F55A5A</p>
     </footer>
     <script src="./js/script.js"></script>
 </body>

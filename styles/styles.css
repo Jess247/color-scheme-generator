@@ -5,8 +5,71 @@
   box-sizing: border-box;
 }
 
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
 body {
   font-family: "Inter", sans-serif;
+  background: #1F2937;
+  color: #D5D4D8;
+}
+
+.main .form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+.main .form .custom-select::after, .main .form .select {
+  grid-area: select;
+}
+.main .form .custom-select {
+  flex-grow: 2;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+}
+.main .form .custom-select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+.main .form .custom-select .select {
+  background: #1F2937;
+  width: 100%;
+  color: #D5D4D8;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 0 1em 0 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+.main .form .custom-select .select::-ms-expand {
+  display: none;
+}
+.main .form .btn {
+  font-family: "Inter", sans-serif;
+  background: #3D4B60;
+  color: #D5D4D8;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,74 @@
 @import 'variables', 'resets';
-
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+  }
 body {
-    font-family: 'Inter', sans-serif;
+    @include font;
+    background: $bg-color;
+    color: $text-color;
+}
+
+.main {
+    .form {
+        @include flex;
+        gap: 1em;
+        padding: 1em;
+        
+        .custom-select::after, .select {
+            grid-area: select;
+        }
+
+        .custom-select {
+            flex-grow: 2;
+            display: grid;
+            grid-template-areas: "select";
+            align-items: center;
+            width: 100%;
+            min-width: 15ch;
+            max-width: 30ch;
+            border: 1px solid var(--select-border);
+            border-radius: 0.25em;
+            padding: 0.25em 0.5em;
+        
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 1.1;
+
+            &::after {
+                content: "";
+                width: 0.8em;
+                height: 0.5em;
+                background-color: var(--select-arrow);
+                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+                justify-self: end;
+            }
+
+
+            .select {
+                background: $bg-color;
+                width: 100%;
+                color: $text-color;
+                appearance: none;
+                border: none;
+                outline: none;
+                padding: 0 1em 0 0;
+                font-family: inherit;
+                font-size: inherit;
+                cursor: inherit;
+                line-height: inherit;
+
+                &::-ms-expand {
+                    display: none;
+                }
+            }
+
+        }
+        .btn {
+            @include font;
+            background: $light-color;
+            color: $text-color;
+        }
+    }
 }
